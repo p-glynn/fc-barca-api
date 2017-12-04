@@ -15,7 +15,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.get('/players', (req, res, next) => {
+app.get('/', (req, res, next) => {
   res.status(200).send(data);
 })
 
