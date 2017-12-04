@@ -7,15 +7,14 @@ const morgan = require('morgan');
 const port = process.env.PORT || 3000;
 const data = require('./db');
 const players = data.players;
-// console.log(Array.isArray( data.players));
-console.log(Array.isArray(players));
+
 
 app.disable('x-powered-by')
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.get('/', (req, res, next) => {
+app.get('/players', (req, res, next) => {
   res.status(200).send(data);
 })
 
